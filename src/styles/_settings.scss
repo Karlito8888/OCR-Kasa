@@ -1,0 +1,39 @@
+$main-color: #ff6060;
+$background: #f6f6f6;
+$black: #000000;
+$white: #ffffff;
+
+@mixin centerChild {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  color: $white;
+  max-width: 1440px;
+  margin-inline: auto;
+}
+
+header,
+#hero,
+main {
+  padding-inline: clamp(1.25rem, -3.521rem + 15.2672vw, 6.25rem);
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: $black;
+}

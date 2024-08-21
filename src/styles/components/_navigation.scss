@@ -1,0 +1,32 @@
+.navigation {
+  ul {
+    display: flex;
+    gap: clamp(1.625rem, -0.2238rem + 5.916vw, 3.5625rem);
+    li {
+      a {
+        font-size: clamp(0.75rem, 0.0344rem + 2.2901vw, 1.5rem);
+      }
+      .active {
+        position: relative;
+
+        &::after {
+          position: absolute;
+          content: "";
+          height: 2px;
+          width: 0;
+          background: $black;
+          bottom: -3px;
+          left: 50%;
+          transform: translateX(-50%);
+          animation: anim 0.4s ease forwards;
+
+          @keyframes anim {
+            to {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
