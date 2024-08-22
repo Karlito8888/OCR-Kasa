@@ -1,12 +1,19 @@
 import React from 'react';
 import Header from '../sections/Header';
+import Hero from '../sections/Hero';
 
 const About = () => {
     return (
-        <>
-            <Header />
-            <h1>A PROPOS</h1>
-        </>
+      <>
+        <Header />
+        <Hero
+          variant="about"
+          showTitle={false}
+          boxShadow="none"
+          backgroundColor="transparent"
+        />
+        <h1>A PROPOS</h1>
+      </>
     );
 };
 

@@ -20,6 +20,8 @@ body {
   color: $white;
   max-width: 1440px;
   margin-inline: auto;
+  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 header,
