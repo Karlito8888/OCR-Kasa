@@ -2,6 +2,7 @@ import React from 'react';
 import Header from '../sections/Header';
 import Hero from '../sections/Hero';
 import Main from '../sections/Main';
+import Footer from '../sections/Footer';
 
 const Home = () => {
     return (
@@ -14,6 +15,7 @@ const Home = () => {
           backgroundColor="rgba(0, 0, 0, 0.6)"
         />
         <Main />
+        <Footer />
       </>
     );
 };

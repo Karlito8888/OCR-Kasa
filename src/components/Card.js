@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
 const Card = () => {
   const [data, setData] = useState(null);
@@ -31,10 +31,9 @@ const Card = () => {
               className="card-cover"
               style={{ backgroundImage: `url(${item.cover})` }}
             >
-            <p className="card-title">{item.title}</p>
-            <p className='card-location'>{item.location}</p>
+              <p className="card-title">{item.title}</p>
+              <p className="card-location">{item.location}</p>
             </div>
-
           </div>
         ))}
     </div>

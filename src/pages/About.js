@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from '../sections/Header';
 import Hero from '../sections/Hero';
+import Footer from '../sections/Footer';
 
 const About = () => {
     return (
@@ -13,6 +14,7 @@ const About = () => {
           backgroundColor="transparent"
         />
         <h1>A PROPOS</h1>
+        <Footer />
       </>
     );
 };
