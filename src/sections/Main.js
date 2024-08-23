@@ -12,7 +12,9 @@ const Main = () => {
         className="main-container"
         style={{ backgroundColor: backgroundColor }}
       >
+        <div className="main-gallery">
         <Card />
+        </div>
       </div>
     </main>
   );

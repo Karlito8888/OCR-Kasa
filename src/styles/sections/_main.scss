@@ -1,10 +1,46 @@
 main {
-    width: 100%;
-    height: clamp(50.3125rem, 48.8812rem + 4.5802vw, 51.8125rem);
+  width: 100%;
+  height: auto;
+  overflow-y: hidden;
+  margin-bottom: clamp(1.6875rem, 0.3158rem + 4.3893vw, 3.125rem);
 
-    .main-container {
-        width: 100%;
-        height: 100%;
-        border-radius: 25px;
+  .main-container {
+    width: 100%;
+    height: auto;
+    border-radius: 25px;
+    background-color: transparent !important;
+    padding-top: clamp(0rem, -3.3397rem + 10.687vw, 3.5rem);
+    padding-inline: clamp(0rem, -2.9819rem + 9.542vw, 3.125rem);
+    padding-bottom: clamp(0rem, -2.5644rem + 8.2061vw, 2.6875rem);
+
+    .main-gallery {
+      width: 100%;
+      height: calc(
+        3 * clamp(15.9375rem, 10.8683rem + 16.2214vw, 21.25rem) + 2 *
+          clamp(1.25rem, -0.5391rem + 5.7252vw, 3.125rem)
+      );
+      border-radius: 10px;
+      background-color: transparent !important;
+      overflow-y: scroll;
+      scrollbar-width: none; /* Pour Firefox */
+      -ms-overflow-style: none; /* Pour Internet Explorer et Edge */
     }
+    .main-gallery::-webkit-scrollbar {
+      display: none; /* Pour Chrome, Safari et Opera */
+    }
+  }
+
+  @media (min-width: 768px) {
+    .main-container {
+      background-color: #f6f6f6 !important;
+    }
+  }
+  @media (min-width: 1240px) {
+    .main-gallery {
+      height: calc(
+        2 * clamp(15.9375rem, 10.8683rem + 16.2214vw, 21.25rem) +
+          clamp(1.25rem, -0.5391rem + 5.7252vw, 3.125rem)
+      ) !important;
+    }
+  }
 }
