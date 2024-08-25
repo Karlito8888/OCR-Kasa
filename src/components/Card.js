@@ -1,23 +1,9 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React, { useContext } from "react";
+import { Link } from "react-router-dom";
+import { DataContext } from "../context/DataContext";
 
 const Card = () => {
-  const [data, setData] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    axios
-      .get("./db.json")
-      .then((response) => {
-        setData(response.data);
-        setLoading(false);
-      })
-      .catch((err) => {
-        setError(err);
-        setLoading(false);
-      });
-  }, []);
+  const { data, loading, error } = useContext(DataContext);
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error fetching data: {error.message}</p>;
@@ -26,15 +12,20 @@ const Card = () => {
     <div className="cards-container">
       {data &&
         data.map((item) => (
-          <div key={item.id} className="card-content">
+          <Link
+            key={item.id}
+            to={`/fiche-logement/${item.id}`}
+            className="card-content"
+          >
             <div
               className="card-cover"
               style={{ backgroundImage: `url(${item.cover})` }}
+              aria-label={item.title}
             >
               <p className="card-title">{item.title}</p>
               <p className="card-location">{item.location}</p>
             </div>
-          </div>
+          </Link>
         ))}
     </div>
   );

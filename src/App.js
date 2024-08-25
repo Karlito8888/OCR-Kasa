@@ -1,20 +1,23 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
-import Logement from "./pages/Logement";
+import Logements from "./pages/Logements";
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
+import { DataProvider } from "./context/DataContext";
 
 const App = () => {
   return (
-   <BrowserRouter>
-   <Routes>
-    <Route path="/" element={<Home />} />
-    <Route path="/fiche-logement" element={<Logement />} />
-    <Route path="/about" element={<About />} />
-    <Route path="*" element={<NotFound />} />
-   </Routes>
-   </BrowserRouter>
+    <BrowserRouter>
+      <DataProvider>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/fiche-logement/:id" element={<Logements />} />
+          <Route path="/about" element={<About />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </DataProvider>
+    </BrowserRouter>
   );
 };
 

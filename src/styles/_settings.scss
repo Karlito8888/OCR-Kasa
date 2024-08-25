@@ -16,6 +16,7 @@ $white: #ffffff;
 }
 
 body {
+  height: 100%;
   font-family: "Montserrat", sans-serif;
   color: $white;
   max-width: 1440px;
@@ -24,8 +25,12 @@ body {
   overflow-x: clip;
 }
 
+#root {
+  height: 100%;
+}
+
 header,
-#hero,
+#banner,
 main {
   padding-inline: clamp(1.25rem, -3.521rem + 15.2672vw, 6.25rem);
 }
@@ -38,4 +43,10 @@ a {
   text-decoration: none;
   cursor: pointer;
   color: $black;
+}
+
+button {
+  border: none;
+  background: none;
+  outline: none;
 }

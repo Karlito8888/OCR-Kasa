@@ -1,15 +1,23 @@
 import React from "react";
 
-const Hero = ({
+const Banner = ({
   variant,
   showTitle,
   boxShadow,
   backgroundColor,
+  marginTop,
+  marginBottom,
 }) => {
   return (
-    <section id="hero">
+    <section
+      id="banner"
+      style={{
+        marginBottom: marginBottom,
+        marginTop: marginTop,
+      }}
+    >
       <div
-        className={`hero-container hero-${variant}`} // Ajoute la classe correspondante
+        className={`banner-container banner-${variant}`}
         style={{
           boxShadow: boxShadow,
           backgroundColor: backgroundColor,
@@ -25,4 +33,4 @@ const Hero = ({
   );
 };
 
-export default Hero;
+export default Banner;

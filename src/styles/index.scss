@@ -1,8 +1,14 @@
 @import "./settings";
+@import "./pages/home";
+@import "./pages/logements";
+@import "./pages/about";
+@import "./pages/notfound";
 @import "./sections/header";
 @import "./components/logo";
 @import "./components/navigation";
-@import "./sections/hero";
+@import "./components/banner";
 @import "./sections/main";
 @import "./components/card";
+@import "./components/gallery";
+@import "./components/collapse";
 @import "./sections/footer";

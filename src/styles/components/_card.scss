@@ -1,13 +1,22 @@
 .cards-container {
   width: 100%;
+  height: calc(
+    3 * clamp(15.9375rem, 10.8683rem + 16.2214vw, 21.25rem) + 2 *
+      clamp(1.25rem, -0.5391rem + 5.7252vw, 3.125rem)
+  );
   display: grid;
   justify-content: center;
   grid-template-columns: 1fr;
   column-gap: clamp(0rem, -3.5782rem + 11.4504vw, 3.75rem);
   row-gap: clamp(1.25rem, -0.5391rem + 5.7252vw, 3.125rem);
+  border-radius: 10px;
+  overflow-y: scroll;
+  scrollbar-width: none; /* Pour Firefox */
+  -ms-overflow-style: none;
 
   .card-content {
     height: clamp(15.9375rem, 10.8683rem + 16.2214vw, 21.25rem);
+    border-radius: 10px;
 
     .card-cover {
       width: 100%;
@@ -23,12 +32,17 @@
 
       .card-title,
       .card-location {
+        color: $white;
         font-size: 18px;
         font-weight: 700;
       }
     }
   }
 }
+.cards-container::-webkit-scrollbar {
+  display: none; /* Pour Chrome, Safari et Opera */
+}
+
 @media (min-width: 768px) {
   .cards-container {
     grid-template-columns: repeat(2, 1fr);
@@ -37,6 +51,10 @@
 
 @media (min-width: 1240px) {
   .cards-container {
+    height: calc(
+      2 * clamp(15.9375rem, 10.8683rem + 16.2214vw, 21.25rem) +
+        clamp(1.25rem, -0.5391rem + 5.7252vw, 3.125rem)
+    ) !important;
     grid-template-columns: repeat(3, 1fr);
   }
 }

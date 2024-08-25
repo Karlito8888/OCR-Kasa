@@ -1,0 +1,15 @@
+.home-main-container {
+    width: 100%;
+    height: auto;
+    border-radius: 25px;
+    background-color: transparent !important;
+    padding-top: clamp(0rem, -3.3397rem + 10.687vw, 3.5rem);
+    padding-inline: clamp(0rem, -2.9819rem + 9.542vw, 3.125rem);
+    padding-bottom: clamp(0rem, -2.5644rem + 8.2061vw, 2.6875rem);
+  }
+
+  @media (min-width: 768px) {
+    .home-main-container {
+      background-color: #f6f6f6 !important;
+    }
+  }
