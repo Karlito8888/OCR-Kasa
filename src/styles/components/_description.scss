@@ -1,0 +1,97 @@
+.description-container {
+  display: grid;
+
+  .top-container {
+    display: grid;
+
+    .top-left-container {
+      display: grid;
+      margin-bottom: clamp(1rem, 0.5229rem + 1.5267vw, 1.5rem);
+
+      h1 {
+        color: $main-color;
+        font-size: clamp(1.125rem, 0.0515rem + 3.4351vw, 2.25rem);
+        font-weight: 500;
+        line-height: clamp(1.625rem, 0.1341rem + 4.771vw, 3.1875rem);
+        margin-bottom: 5px;
+      }
+
+      h2 {
+        color: $black;
+        font-size: clamp(0.875rem, 0.6365rem + 0.7634vw, 1.125rem);
+        font-weight: 500;
+        margin-bottom: clamp(0.625rem, 0.0286rem + 1.9084vw, 1.25rem);
+      }
+
+      .tags-container {
+        ul {
+          display: flex;
+          gap: 10px;
+        }
+
+        li {
+          font-size: clamp(0.625rem, 0.3865rem + 0.7634vw, 0.875rem);
+          font-weight: 700;
+          padding: 2px 20px;
+          border-radius: 10px;
+          background-color: $main-color;
+        }
+      }
+    }
+  }
+
+  .top-right-container {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+    .host-info {
+      display: flex;
+      gap: 10px;
+
+      .host-name {
+        display: grid;
+        p {
+          color: $main-color;
+          font-size: clamp(0.75rem, 0.3922rem + 1.145vw, 1.125rem);
+          font-weight: 500;
+          letter-spacing: 1px;
+        }
+      }
+
+      img {
+        border-radius: 50%;
+        width: clamp(2rem, 0.0916rem + 6.1069vw, 4rem);
+      }
+    }
+
+    .rating-info {
+      .rating-stars {
+        display: flex;
+      }
+
+      .star {
+        font-size: clamp(0.875rem, 0.219rem + 2.0992vw, 1.5625rem);
+        color: gray;
+        margin-right: 5px;
+      }
+
+      .star.filled {
+        color: $main-color;
+      }
+    }
+  }
+}
+
+@media (min-width: 480px) {
+
+    .top-container {
+        grid-template-columns: 2fr 1fr;
+    }
+  .top-right-container {
+    flex-direction: column !important;
+    align-items: flex-end !important;
+  }
+}

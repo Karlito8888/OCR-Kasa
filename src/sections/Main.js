@@ -4,6 +4,7 @@ import Gallery from "../components/Gallery";
 import { useLocation } from "react-router-dom";
 import { DataContext } from "../context/DataContext"; // Import the context
 import Collapse from "../components/Collapse";
+import Description from "../components/Description";
 
 const Main = () => {
   const { data } = useContext(DataContext); // Access the data from the context
@@ -21,7 +22,18 @@ const Main = () => {
       {location.pathname.startsWith("/fiche-logement") && (
         <div className="logements-main-container">
           {logementDetail ? (
-            <Gallery images={logementDetail.pictures} />
+            <>
+              <Gallery images={logementDetail.pictures} />
+              <Description
+                title={logementDetail.title}
+                description={logementDetail.description}
+                host={logementDetail.host}
+                rating={logementDetail.rating}
+                location={logementDetail.location}
+                equipments={logementDetail.equipments}
+                tags={logementDetail.tags}
+              />
+            </>
           ) : (
             <p>No detail found</p>
           )}

@@ -1,40 +1,47 @@
-.carousel {
+.carousel-container {
   position: relative;
   width: 100%;
-  max-width: 600px;
-  margin: auto;
+  height: clamp(15.9375rem, 6.3955rem + 30.5344vw, 25.9375rem);
+  margin-bottom: clamp(0.9375rem, 0.0429rem + 2.8626vw, 1.875rem);
+  
+  .carousel-img {
+    width: 100%;
+    height: 100%;
+    border-radius: clamp(0.625rem, -0.2696rem + 2.8626vw, 1.5625rem);
+    object-fit: cover;
+  }
+  .carousel-controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    
+    .arrow {
+      color: #fff;
+      margin-inline: clamp(0.375rem, -0.6985rem + 3.4351vw, 1.5rem);
+      @include centerChild;
+      font-size: clamp(1.4375rem, -2.6775rem + 13.1679vw, 5.75rem);
+    }
+  }
+  
+  .pagination {
+    display: none;
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+  }
+  
+  @media (min-width: 768px) {
+    .pagination {
+      display: block;
+    }
+  }
 }
 
-.carousel-img {
-  width: 100%;
-  height: auto;
-}
 
-.carousel-controls {
-  position: absolute;
-  top: 50%;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  transform: translateY(-50%);
-}
-
-.arrow {
-  background: rgba(0, 0, 0, 0.5);
-  color: #fff;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-  font-size: 24px;
-}
-
-.pagination {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  background: rgba(0, 0, 0, 0.5);
-  color: #fff;
-  padding: 5px 10px;
-  border-radius: 5px;
-  font-size: 16px;
-}

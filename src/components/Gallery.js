@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";
 
 const Gallery = ({ images = [] }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -16,15 +18,15 @@ const Gallery = ({ images = [] }) => {
   }
 
   return (
-    <div className="carousel">
+    <div className="carousel-container">
       <img className="carousel-img" src={images[currentSlide]} alt="Slide" />
       {hasMultipleImages && (
         <div className="carousel-controls">
           <button className="arrow arrow-left" onClick={() => changeSlide(-1)}>
-            &#10094;
+            <FontAwesomeIcon icon={faChevronLeft} />
           </button>
           <button className="arrow arrow-right" onClick={() => changeSlide(1)}>
-            &#10095;
+            <FontAwesomeIcon icon={faChevronRight} />
           </button>
         </div>
       )}
