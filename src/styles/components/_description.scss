@@ -1,12 +1,13 @@
 .description-container {
   display: grid;
+  gap: clamp(0.8125rem, 0.1565rem + 2.0992vw, 1.5rem);
 
   .top-container {
     display: grid;
+    gap: clamp(1rem, 0.5229rem + 1.5267vw, 1.5rem);
 
     .top-left-container {
       display: grid;
-      margin-bottom: clamp(1rem, 0.5229rem + 1.5267vw, 1.5rem);
 
       h1 {
         color: $main-color;
@@ -32,66 +33,78 @@
         li {
           font-size: clamp(0.625rem, 0.3865rem + 0.7634vw, 0.875rem);
           font-weight: 700;
-          padding: 2px 20px;
+          min-width: clamp(5.25rem, 2.8281rem + 7.75vw, 7.1875rem);
+          min-height: clamp(1.125rem, 0.5781rem + 1.75vw, 1.5625rem);
           border-radius: 10px;
           background-color: $main-color;
+          padding-block: 3px;
+          padding-inline: 5%;
+          @include centerChild;
+        }
+      }
+    }
+
+    .top-right-container {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+
+      .host-info {
+        display: flex;
+        gap: 10px;
+
+        .host-name {
+          display: grid;
+          p {
+            color: $main-color;
+            font-size: clamp(0.75rem, 0.3922rem + 1.145vw, 1.125rem);
+            font-weight: 500;
+            letter-spacing: 1px;
+          }
+        }
+
+        img {
+          border-radius: 50%;
+          width: clamp(2rem, 0.0916rem + 6.1069vw, 4rem);
+        }
+      }
+
+      .rating-info {
+        .rating-stars {
+          display: flex;
+        }
+
+        .star {
+          font-size: clamp(0.875rem, 0.219rem + 2.0992vw, 1.5625rem);
+          color: gray;
+          margin-right: 5px;
+        }
+
+        .star.filled {
+          color: $main-color;
         }
       }
     }
   }
 
-  .top-right-container {
+  .bottom-container {
     display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-
-    .host-info {
-      display: flex;
-      gap: 10px;
-
-      .host-name {
-        display: grid;
-        p {
-          color: $main-color;
-          font-size: clamp(0.75rem, 0.3922rem + 1.145vw, 1.125rem);
-          font-weight: 500;
-          letter-spacing: 1px;
-        }
-      }
-
-      img {
-        border-radius: 50%;
-        width: clamp(2rem, 0.0916rem + 6.1069vw, 4rem);
-      }
-    }
-
-    .rating-info {
-      .rating-stars {
-        display: flex;
-      }
-
-      .star {
-        font-size: clamp(0.875rem, 0.219rem + 2.0992vw, 1.5625rem);
-        color: gray;
-        margin-right: 5px;
-      }
-
-      .star.filled {
-        color: $main-color;
-      }
-    }
+    flex-direction: column;
+    gap: 20px;
   }
 }
-
-@media (min-width: 480px) {
-
-    .top-container {
-        grid-template-columns: 2fr 1fr;
-    }
+@media (min-width: 800px) {
+  .top-container {
+    grid-template-columns: 2fr 1fr;
+  }
   .top-right-container {
     flex-direction: column !important;
     align-items: flex-end !important;
+  }
+  .bottom-container {
+    flex-direction: row !important;
+    gap: clamp(1.25rem, -11.25rem + 25vw, 4.75rem) !important;
   }
 }

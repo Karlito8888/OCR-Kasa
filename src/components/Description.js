@@ -1,6 +1,7 @@
 import React from "react";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Collapse from "./Collapse";
 
 const Description = ({
   title,
@@ -63,17 +64,19 @@ const Description = ({
           </div>
         </div>
       </div>
-      {/* <div className="bottom-container">
-        <p>{description}</p>
-        <div className="equipments">
-          <h3>Equipments:</h3>
-          <ul>
-            {equipments.map((equipment, index) => (
-              <li key={index}>{equipment}</li>
-            ))}
-          </ul>
-        </div>
-      </div> */}
+      <div className="bottom-container">
+        <Collapse title="Description" content={description} />
+        <Collapse
+          title="Équipements"
+          content={
+            <ul>
+              {equipments.map((equipment, index) => (
+                <li key={index}>{equipment}</li>
+              ))}
+            </ul>
+          }
+        />
+      </div>
     </div>
   );
 };
