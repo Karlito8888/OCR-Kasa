@@ -1,5 +1,4 @@
 import React, { createContext, useState, useEffect } from "react";
-import axios from "axios";
 
 export const DataContext = createContext();
 
@@ -9,16 +8,22 @@ export const DataProvider = ({ children }) => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    axios
-      .get("/db.json")
-      .then((response) => {
-        setData(response.data);
-        setLoading(false);
-      })
-      .catch((err) => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch("/db.json");
+        if (!response.ok) {
+          throw new Error("Erreur lors de la récupération des données");
+        }
+        const result = await response.json();
+        setData(result);
+      } catch (err) {
         setError(err);
+      } finally {
         setLoading(false);
-      });
+      }
+    };
+
+    fetchData();
   }, []);
 
   return (

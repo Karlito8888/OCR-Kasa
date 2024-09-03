@@ -34,7 +34,7 @@ const Collapse = ({ title, content }) => {
         }}
         ref={contentRef}
       >
-        <p>{content}</p>
+        <div>{content}</div>
       </div>
     </div>
   );
