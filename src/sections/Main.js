@@ -1,25 +1,12 @@
-import React, { useContext, useEffect } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
-import { DataContext } from "../context/DataContext";
+import React from "react";
+import { useLocation } from "react-router-dom";
 import Card from "../components/Card";
 import Gallery from "../components/Gallery";
 import Collapse from "../components/Collapse";
 import Description from "../components/Description";
 
-const Main = () => {
-  const { data } = useContext(DataContext);
+const Main = ({ logementDetail }) => {
   const location = useLocation();
-  // useNavigate permet de rediriger l'utilisateur vers une autre page
-  const navigate = useNavigate();
-  const logementId = location.pathname.split("/").pop();
-  const logementDetail = data.find((item) => item.id === logementId);
-
-  // Redirection si aucun logement n'est trouvé pour l'ID
-  useEffect(() => {
-    if (location.pathname.startsWith("/fiche-logement") && !logementDetail) {
-      navigate("/not-found");
-    }
-  }, [logementDetail, location.pathname, navigate]);
 
   return (
     <main>

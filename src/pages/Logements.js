@@ -1,19 +1,32 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import Header from "../sections/Header";
 import Footer from "../sections/Footer";
 import Main from "../sections/Main";
 import { DataContext } from "../context/DataContext";
 
 const Logements = () => {
-  const { data, loading, error } = useContext(DataContext);
+  const { data } = useContext(DataContext);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const logementId = location.pathname.split("/").pop();
+  const logementDetail = data.find((item) => item.id === logementId);
 
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error fetching data: {error.message}</p>;
+  // Redirection si aucun logement n'est trouvé pour l'ID
+  useEffect(() => {
+    if (
+      location.pathname.startsWith("/fiche-logement") &&
+      data.length > 0 &&
+      !logementDetail
+    ) {
+      navigate("/not-found");
+    }
+  }, [logementDetail, data.length, location.pathname, navigate]);
 
   return (
     <>
       <Header />
-      <Main data={data} />
+      <Main logementDetail={logementDetail} />
       <Footer />
     </>
   );

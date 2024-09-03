@@ -4,7 +4,6 @@ import Home from "./pages/Home";
 import Logements from "./pages/Logements";
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
-import { DataProvider } from "./context/DataContext";
 
 const router = createBrowserRouter([
   { path: "/", element: <Home /> },
@@ -15,11 +14,7 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-  return (
-    <DataProvider>
-      <RouterProvider router={router} />;
-    </DataProvider>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;

@@ -3,10 +3,7 @@ import { Link } from "react-router-dom";
 import { DataContext } from "../context/DataContext";
 
 const Card = () => {
-  const { data, loading, error } = useContext(DataContext);
-
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error fetching data: {error.message}</p>;
+  const { data } = useContext(DataContext);
 
   return (
     <div className="cards-container">
