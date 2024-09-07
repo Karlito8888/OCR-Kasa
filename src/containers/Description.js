@@ -1,7 +1,7 @@
 import React from "react";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Collapse from "./Collapse";
+import Collapse from "../components/Collapse";
 
 const Description = ({
   title,
@@ -28,12 +28,12 @@ const Description = ({
     return stars;
   };
 
-   const splitName = (fullName) => {
-     const [firstName, lastName] = fullName.split(" ");
-     return { firstName, lastName };
-   };
+  const splitName = (fullName) => {
+    const [firstName, lastName] = fullName.split(" ");
+    return { firstName, lastName };
+  };
 
-    const { firstName, lastName } = splitName(host.name);
+  const { firstName, lastName } = splitName(host.name);
 
   return (
     <div className="description-container">

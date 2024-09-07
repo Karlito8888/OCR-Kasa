@@ -19,7 +19,11 @@ const Gallery = ({ images = [] }) => {
 
   return (
     <div className="carousel-container">
-      <img className="carousel-img" src={images[currentSlide]} alt="Slide" />
+      <img
+        className="carousel-img"
+        src={images[currentSlide]}
+        alt="Slide"
+      />
       {hasMultipleImages && (
         <div className="carousel-controls">
           <button className="arrow arrow-left" onClick={() => changeSlide(-1)}>

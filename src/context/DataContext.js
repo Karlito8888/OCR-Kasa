@@ -8,11 +8,26 @@ export const DataProvider = ({ children }) => {
   useEffect(() => {
     fetch("/db.json")
       .then((response) => response.json())
-      .then((json) => setData(json))
+      .then((json) => {
+        setData(json);
+        preloadImages(json);
+      })
       .catch((error) =>
         console.error("Erreur lors du fetch des données :", error)
       );
   }, []);
+
+  // Fonction pour précharger les images `pictures`
+  const preloadImages = (data) => {
+    data.forEach((item) => {
+      if (item.pictures) {
+        item.pictures.forEach((imageUrl) => {
+          const img = new Image(); // Crée un nouvel objet image
+          img.src = imageUrl; // Assigne l'URL de l'image, ce qui la télécharge en cache
+        });
+      }
+    });
+  };
 
   return (
     <DataContext.Provider value={{ data }}>

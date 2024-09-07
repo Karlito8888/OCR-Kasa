@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "../sections/Header";
-import Banner from "../components/Banner";
+import Banner from "../containers/Banner";
 import Main from "../sections/Main";
 import Footer from "../sections/Footer";
 

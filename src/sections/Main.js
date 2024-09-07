@@ -1,9 +1,9 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
 import Card from "../components/Card";
-import Gallery from "../components/Gallery";
+import Gallery from "../containers/Gallery";
 import Collapse from "../components/Collapse";
-import Description from "../components/Description";
+import Description from "../containers/Description";
 
 const Main = ({ logementDetail }) => {
   const location = useLocation();

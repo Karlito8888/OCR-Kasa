@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "../sections/Header";
 import Footer from "../sections/Footer";
-import Error404 from "../components/Error404";
+import Error404 from "../containers/Error404";
 
 const NotFound = () => {
   return (
