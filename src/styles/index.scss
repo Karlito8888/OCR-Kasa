@@ -6,11 +6,11 @@
 @import "./sections/header";
 @import "./components/logo";
 @import "./components/navigation";
-@import "./components/banner";
-@import "./components/description";
+@import "./containers/banner";
+@import "./containers/description";
 @import "./sections/main";
 @import "./components/card";
-@import "./components/gallery";
+@import "./containers/gallery";
 @import "./components/collapse";
 @import "./sections/footer";
-@import "./components/error404";
+@import "./containers/error404";

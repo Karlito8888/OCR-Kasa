@@ -40,7 +40,7 @@
     padding-block: 0;
     padding-inline: clamp(0.625rem, 0.0286rem + 1.9084vw, 1.25rem);
     border-radius: 0 0 5px 5px;
-    transition: max-height 1s ease-out, padding-block 1s ease-in;
+    transition: max-height 0.3s ease-out, padding-block 0.3s ease-in;
   }
 
   .collapse-content.open {
