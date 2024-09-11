@@ -1,18 +1,18 @@
 import React from "react";
-import Header from "../sections/Header";
-import Footer from "../sections/Footer";
-import Error404 from "../containers/Error404";
+import { Link } from "react-router-dom";
 
 const NotFound = () => {
   return (
     <>
-      <Header />
-      <main>
-        <div className="not-found-main-container">
-          <Error404 />
-        </div>
-      </main>
-      <Footer />
+      <div className="not-found-main-container">
+          <h1>404</h1>
+          <p>
+            Oups! La page que <span>vous demandez n'existe pas.</span>
+          </p>
+          <Link to="/" className="home-link">
+            Retourner sur la page d’accueil
+          </Link>
+      </div>
     </>
   );
 };

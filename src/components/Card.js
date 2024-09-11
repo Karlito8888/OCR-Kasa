@@ -3,28 +3,26 @@ import { Link } from "react-router-dom";
 import { DataContext } from "../context/DataContext";
 
 const Card = () => {
-  const { data } = useContext(DataContext);
+  const { data } = useContext(DataContext); 
 
   return (
-    <div className="cards-container">
+    <ul className="cards-container">
       {data &&
         data.map((item) => (
-          <Link
-            key={item.id}
-            to={`/fiche-logement/${item.id}`}
-            className="card-content"
-          >
-            <div
-              className="card-cover"
-              style={{ backgroundImage: `url(${item.cover})` }}
-              aria-label={item.title}
-            >
-              <p className="card-title">{item.title}</p>
-              <p className="card-location">{item.location}</p>
-            </div>
-          </Link>
+          <li key={item.id} className="card-content">
+            <Link to={`/details/${item.id}`}>
+              <div
+                className="card-cover"
+                style={{ backgroundImage: `url(${item.cover})` }}
+                aria-label={item.title}
+              >
+                <p className="card-title">{item.title}</p>
+                <p className="card-location">{item.location}</p>
+              </div>
+            </Link>
+          </li>
         ))}
-    </div>
+    </ul>
   );
 };
 

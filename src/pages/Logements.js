@@ -1,34 +1,33 @@
-import React, { useContext, useEffect } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
-import Header from "../sections/Header";
-import Footer from "../sections/Footer";
-import Main from "../sections/Main";
+import React, { useContext } from "react";
 import { DataContext } from "../context/DataContext";
+import { useParams } from "react-router-dom";
+import Gallery from "../containers/Gallery";
+import Description from "../containers/Description";
 
 const Logements = () => {
   const { data } = useContext(DataContext);
-  const location = useLocation();
-  const navigate = useNavigate();
-  const logementId = location.pathname.split("/").pop();
-  const logementDetail = data.find((item) => item.id === logementId);
-
-  // Redirection si aucun logement n'est trouvé pour l'ID
-  useEffect(() => {
-    if (
-      location.pathname.startsWith("/fiche-logement") &&
-      data.length > 0 &&
-      !logementDetail
-    ) {
-      navigate("/not-found");
-    }
-  }, [logementDetail, data.length, location.pathname, navigate]);
+  const { id } = useParams();
+  const logementDetail = data.find((item) => item.id === id);
 
   return (
-    <>
-      <Header />
-      <Main logementDetail={logementDetail} />
-      <Footer />
-    </>
+    <div className="logements-main-container">
+      {logementDetail ? (
+        <>
+          <Gallery images={logementDetail.pictures} />
+          <Description
+            title={logementDetail.title}
+            description={logementDetail.description}
+            host={logementDetail.host}
+            rating={logementDetail.rating}
+            location={logementDetail.location}
+            equipments={logementDetail.equipments}
+            tags={logementDetail.tags}
+          />
+        </>
+      ) : (
+        <p>Logement non trouvé.</p>
+      )}
+    </div>
   );
 };
 

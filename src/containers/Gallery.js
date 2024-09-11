@@ -14,7 +14,7 @@ const Gallery = ({ images = [] }) => {
   };
 
   if (!hasImages) {
-    return <p>No images to display</p>;
+    return <p>Aucune image trouvée...</p>;
   }
 
   return (

@@ -22,16 +22,14 @@ export const DataProvider = ({ children }) => {
     data.forEach((item) => {
       if (item.pictures) {
         item.pictures.forEach((imageUrl) => {
-          const img = new Image(); // Crée un nouvel objet image
-          img.src = imageUrl; // Assigne l'URL de l'image, ce qui la télécharge en cache
+          const img = new Image(); 
+          img.src = imageUrl;
         });
       }
     });
   };
 
   return (
-    <DataContext.Provider value={{ data }}>
-      {children}
-    </DataContext.Provider>
+    <DataContext.Provider value={{ data }}>{children}</DataContext.Provider>
   );
 };
