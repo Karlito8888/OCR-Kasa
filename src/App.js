@@ -10,15 +10,17 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
-    errorElement: <NotFound />,
     children: [
       { path: "", element: <Home /> },
       {
         path: "details/:id",
         element: <Logements />,
-        errorElement: <NotFound />,
       },
       { path: "about", element: <About /> },
+      {
+        path: "not-found",
+        element: <NotFound />,
+      },
       {
         path: "*",
         element: <NotFound />,
@@ -28,7 +30,7 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-     return <RouterProvider router={router} />;
+  return <RouterProvider router={router} />;
 }
 
 export default App;

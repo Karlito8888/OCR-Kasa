@@ -1,13 +1,21 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { DataContext } from "../context/DataContext";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Gallery from "../containers/Gallery";
 import Description from "../containers/Description";
 
 const Logements = () => {
   const { data } = useContext(DataContext);
   const { id } = useParams();
+  const navigate = useNavigate();
+
   const logementDetail = data.find((item) => item.id === id);
+
+  useEffect(() => {
+    if (!logementDetail) {
+      navigate("/not-found");
+    }
+  }, [logementDetail, navigate]);
 
   return (
     <div className="logements-main-container">
