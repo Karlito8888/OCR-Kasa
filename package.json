@@ -1,5 +1,5 @@
 {
-  "homepage": "https://karlito8888.github.io/OCR-Kasa/",
+  "homepage": "https://karlito8888.github.io/OCR-Kasa",
   "name": "kasa",
   "version": "0.1.0",
   "private": false,
@@ -23,6 +23,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
 
   },
