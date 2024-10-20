@@ -25,11 +25,11 @@
   }
 
   .banner-home {
-    background-image: url("../../assets/images/home-s.png");
+    background-image: url("../assets/images/home-s.png");
   }
 
   .banner-about {
-    background-image: url("../../assets/images/a-propos-s.png");
+    background-image: url("../assets/images/a-propos-s.png");
   }
 
   @media (min-width: 500px) {
@@ -47,21 +47,21 @@
   }
   @media (min-width: 800px) {
     .banner-home {
-      background-image: url("../../assets/images/home-m.png");
+      background-image: url("../assets/images/home-m.png");
     }
 
     .banner-about {
-      background-image: url("../../assets/images/a-propos-m.png");
+      background-image: url("../assets/images/a-propos-m.png");
     }
   }
 
   @media (min-width: 1100px) {
     .banner-home {
-      background-image: url("../../assets/images/home-l.png");
+      background-image: url("../assets/images/home-l.png");
     }
 
     .banner-about {
-      background-image: url("../../assets/images/a-propos-l.png");
+      background-image: url("../assets/images/a-propos-l.png");
     }
   }
 }

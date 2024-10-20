@@ -6,15 +6,15 @@ export const DataProvider = ({ children }) => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch("/db.json")
-      .then((response) => response.json())
-      .then((json) => {
-        setData(json);
-        preloadImages(json);
-      })
-      .catch((error) =>
-        console.error("Erreur lors du fetch des données :", error)
-      );
+     fetch(`${process.env.PUBLIC_URL}/db.json`)
+       .then((response) => response.json())
+       .then((json) => {
+         setData(json);
+         preloadImages(json);
+       })
+       .catch((error) =>
+         console.error("Erreur lors du fetch des données :", error)
+       );
   }, []);
 
   // Fonction pour précharger les images `pictures`
